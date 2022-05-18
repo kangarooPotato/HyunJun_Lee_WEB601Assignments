@@ -25,7 +25,7 @@ export class List {
                 <p>something</p>
                 <a>image</a>`;
     } else {
-      return "<h3>fail</h3>";
+      return "<h3>error</h3>";
     }
   }
 
