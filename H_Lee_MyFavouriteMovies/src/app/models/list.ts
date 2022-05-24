@@ -35,14 +35,4 @@ export class List {
   }
 
 
-  readContent(item: number){
-    if(item <= this.getLength()){
-        return `<h3 style="color: coral">title</h3>
-                <p>something</p>
-                <a>image</a>`;
-    } else {
-      return "<h3>error</h3>";
-    }
-  }
-
 }
