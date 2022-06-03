@@ -28,7 +28,7 @@ export class ContentListComponent implements OnInit {
       title: "The Godfather",
       body: "The aging patriarch of an organized crime dynasty in postwar New York City transfers control of his clandestine empire to his reluctant youngest son.",
       author: "Francis Ford Coppola",
-      imageLink: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+      imageLink: "https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg",
       type: "Action",
       hashtags: ["Christian Bale", "Heath Ledger", "Aaron Eckhart"]
     }, {

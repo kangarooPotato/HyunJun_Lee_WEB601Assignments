@@ -17,9 +17,13 @@ export class ContentCardComponent implements OnInit {
       console.log("value of favourite movie: ", this.favouriteMovie.title);
     }
   }
+
+  hi(): void{
+    console.log("Asd");
+  }
+
   displayAuthorAndId(): void {
     console.log("Directed by: ", this.favouriteMovie?.author, ", Movies ID: ", this.favouriteMovie?.id);
-
   }
 
 }
