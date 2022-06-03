@@ -1,7 +1,8 @@
 import {Content} from "./content";
 
 export class List {
-  private _items: Content[];
+  private _items: Content[]; // 이거 왜 private함?
+  // 안쓰거나 protected써야 다른곳에서도 쓸수있는거 아님?
 
   constructor() {
     this._items = []; // initialize Content array to be empty
@@ -21,7 +22,14 @@ export class List {
     return this._items.length;
   }
 
+  processContent (content: Content):void {
+    console.log(content.body);
+  }
+
   printProperties(index: number): string {
+    if (this._items.length <= index || index < 0) {
+      return `<h2>Error, invalid index requested: ${index}</h2>`;
+    }
     return `<div class="content-wrapper" style="text-align: center; width: 500px; margin: 0 auto;">
               <h1>${this._items[index].title}</h1>
               <p>${this._items[index].body}</p>
@@ -29,20 +37,5 @@ export class List {
               <img src="${this._items[index].imageLink}">
               <div style="font-weight: bold;">${this._items[index].type}</div>
             </div>`;
-    if (this._items.length <= index || index < 0) {
-      return `<h2>Error, invalid index requested: ${index}</h2>`;
-    }
   }
-
-
-  readContent(item: number){
-    if(item <= this.getLength()){
-        return `<h3 style="color: coral">title</h3>
-                <p>something</p>
-                <a>image</a>`;
-    } else {
-      return "<h3>error</h3>";
-    }
-  }
-
 }
