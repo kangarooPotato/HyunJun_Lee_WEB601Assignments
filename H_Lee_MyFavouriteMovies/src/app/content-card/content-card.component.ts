@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Content } from "../models/content";
 
 @Component({
   selector: 'app-content-card',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentCardComponent implements OnInit {
 
+  @Input() favouriteMovie?: Content;
+
   constructor() { }
 
   ngOnInit(): void {
+    if (this.favouriteMovie) {
+      console.log("value of favourite movie: ", this.favouriteMovie.title);
+    }
+  }
+  displayAuthorAndId(): void {
+    console.log("Directed by: ", this.favouriteMovie?.author, ", Movies ID: ", this.favouriteMovie?.id);
+
   }
 
 }

@@ -1,1 +1,17 @@
-<p>content-card works!</p>
+<div *ngIf="favouriteMovie">
+  <header>{{ favouriteMovie.title }}</header>
+  <img [src]="favouriteMovie.imageLink" (click)="displayAuthorAndId()">
+
+  <p>
+    {{ favouriteMovie.body }}
+  </p>
+  <div class="author">{{ favouriteMovie.author }}</div>
+  <div class="type">{{ favouriteMovie.type }}</div>
+  <div class="hashtags">
+    <span *ngFor="let hashtag of favouriteMovie.hashtags">
+      {{ hashtag }}
+    </span>
+  </div>
+
+
+</div>
