@@ -1,1 +1,25 @@
-<p>content-card works!</p>
+<!-- <div *ngIf="topMovie">
+    <header>{{ topMovie.title }}</header>
+    <img *ngIf="topMovie.imageLink" [src]="topMovie.imageLink">
+  
+    <p *ngIf="topMovie.body">
+      {{ topMovie.body }}
+    </p>
+    <div class="author">{{ topMovie.author }}</div>
+    <div class="type">{{ topMovie.type }}</div>
+    <div class="hashtags" *ngIf="topMovie.hashtags">
+      <span *ngFor="let hashtag of topMovie.hashtags">
+        # {{ hashtag }}
+      </span>
+    </div>
+  </div> -->
+
+
+  <div *ngIf="topMovie">
+    <!-- <h1>{{ topMovie?.title }}</h1> -->
+    <h1>{{ topMovie.title }}</h1>
+    <img [src]="topMovie.imageLink">
+    <p>{{ topMovie.body }}</p>
+    <h3>{{ topMovie.author}}</h3>
+    <h4>{{ topMovie.type }}</h4>
+  </div>
