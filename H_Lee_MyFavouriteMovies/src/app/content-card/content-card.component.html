@@ -1,25 +1,30 @@
-<!-- <div *ngIf="topMovie">
-    <header>{{ topMovie.title }}</header>
-    <img *ngIf="topMovie.imageLink" [src]="topMovie.imageLink">
+<!-- <div *ngIf="topmovieCard">
+    <header>{{ topmovieCard.title }}</header>
+    <img *ngIf="topmovieCard.imageLink" [src]="topmovieCard.imageLink">
   
-    <p *ngIf="topMovie.body">
-      {{ topMovie.body }}
+    <p *ngIf="topmovieCard.body">
+      {{ topmovieCard.body }}
     </p>
-    <div class="author">{{ topMovie.author }}</div>
-    <div class="type">{{ topMovie.type }}</div>
-    <div class="hashtags" *ngIf="topMovie.hashtags">
-      <span *ngFor="let hashtag of topMovie.hashtags">
+    <div class="author">{{ topmovieCard.author }}</div>
+    <div class="type">{{ topmovieCard.type }}</div>
+    <div class="hashtags" *ngIf="topmovieCard.hashtags">
+      <span *ngFor="let hashtag of topmovieCard.hashtags">
         # {{ hashtag }}
       </span>
     </div>
   </div> -->
 
 
-  <div *ngIf="topMovie">
-    <!-- <h1>{{ topMovie?.title }}</h1> -->
-    <h1>{{ topMovie.title }}</h1>
-    <img [src]="topMovie.imageLink">
-    <p>{{ topMovie.body }}</p>
-    <h3>{{ topMovie.author}}</h3>
-    <h4>{{ topMovie.type }}</h4>
+  <div *ngIf="movieCard" class="movieCard">
+    <div>
+      <!-- <h1>{{ topmovieCard?.title }}</h1> -->
+      <h1>{{ movieCard.title }}</h1>
+      <img [src]="movieCard.imageLink" (click)="clickEvent()">
+      <div class="text">
+        <p>{{ movieCard.body }}</p>
+        <h3>{{ movieCard.author}}</h3>
+        <h4>{{ movieCard.type }}</h4>
+        <span *ngFor="let eachhashtag of movieCard.hashtags"> #{{ eachhashtag }}</span>
+      </div>
+    </div>
   </div>

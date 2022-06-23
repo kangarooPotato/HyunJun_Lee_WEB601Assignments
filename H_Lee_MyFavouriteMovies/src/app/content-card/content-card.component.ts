@@ -7,11 +7,15 @@ import { Content } from '../models/content';
   styleUrls: ['./content-card.component.scss']
 })
 export class ContentCardComponent implements OnInit {
-  @Input() topMovie?: Content;
+  @Input() movieCard?: Content;
+
+
+  clickEvent() {
+    console.log(this.movieCard?.id, this.movieCard?.author);
+ };
 
   constructor() {
-   }
-
+}
   ngOnInit(): void {
   }
 
