@@ -31,7 +31,7 @@ export class ContentListComponent implements OnInit {
       }, {
         id: 2,
         title: "The Dark Knight",
-        body: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
+        //body: "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.",
         author: "Christopher Nolan",
         imageLink: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
         type: "Action",
@@ -39,19 +39,19 @@ export class ContentListComponent implements OnInit {
       }, {
         id: 3,
         title: "Inception",
-        body: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
+        //body: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
         author: "Christopher Nolan",
         imageLink: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX700_.jpg",
         type: "Sci-Fi",
-        hashtags: ["Leonardo DiCaprio","Joseph Gordon","LevittElliot Page"]
+        //hashtags: ["Leonardo DiCaprio","Joseph Gordon","LevittElliot Page"]
       }, {
         id: 4,
         title: "Top Gun: Maverick",
-        body: "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
+        //body: "After more than thirty years of service as one of the Navy's top aviators, Pete Mitchell is where he belongs, pushing the envelope as a courageous test pilot and dodging the advancement in rank that would ground him.",
         author: "Joseph Kosinski",
-        imageLink: "https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UY720_.jpg",
+        //imageLink: "https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UY720_.jpg",
         type: "Action",
-        hashtags: ["Tom Cruise","Jennifer Connelly","Miles Teller"]
+        //hashtags: ["Tom Cruise","Jennifer Connelly","Miles Teller"]
       }
     ]
   }

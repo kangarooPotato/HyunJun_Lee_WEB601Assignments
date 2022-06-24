@@ -19,12 +19,20 @@
     <div>
       <!-- <h1>{{ topmovieCard?.title }}</h1> -->
       <h1>{{ movieCard.title }}</h1>
-      <img [src]="movieCard.imageLink" (click)="clickEvent()">
-      <div class="text">
-        <p>{{ movieCard.body }}</p>
+      
+      
+      <img *ngIf="movieCard.imageLink" [src]="movieCard.imageLink" (click)="clickEvent()">
+
+        <p *ngIf="movieCard.body">
+          {{ movieCard.body }}
+        </p>
+
         <h3>{{ movieCard.author}}</h3>
         <h4>{{ movieCard.type }}</h4>
-        <span *ngFor="let eachhashtag of movieCard.hashtags"> #{{ eachhashtag }}</span>
-      </div>
+        
+        <div *ngIf="movieCard.hashtags && movieCard.hashtags.length > 0">
+          <span *ngFor="let eachhashtag of movieCard.hashtags"> #{{ eachhashtag }}</span>
+        </div>
+
     </div>
   </div>

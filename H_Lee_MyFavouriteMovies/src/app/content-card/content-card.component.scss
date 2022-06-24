@@ -1,17 +1,27 @@
 .movieCard {
-    width: 100%;
-    height: 100%;
-    background-color: indianred;
-    border-radius: 30px;
-    margin-bottom: 20px;
-    padding: 10px;
-}
-
-.text{
-    color: white;
-    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 img {
-    width: 500px;
+    width: 300px;
+}
+
+
+:host {
+  border: 5px solid lightgray;
+  border-radius: 35px;
+  display: block;
+  margin: 0 auto 16px;
+  max-width: 500px;
+  
+ &.is-odd {
+    background-color: white;
+    color: black;
+  }
+
+  &.is-even {
+    background-color: gray;
+    color: white;
+  }
 }
