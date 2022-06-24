@@ -52,6 +52,22 @@ export class ContentListComponent implements OnInit {
         //imageLink: "https://m.media-amazon.com/images/M/MV5BMmIwZDMyYWUtNTU0ZS00ODJhLTg2ZmEtMTk5ZmYzODcxODYxXkEyXkFqcGdeQXVyMTEyMjM2NDc2._V1_FMjpg_UY720_.jpg",
         type: "Action",
         //hashtags: ["Tom Cruise","Jennifer Connelly","Miles Teller"]
+      }, {
+        id: 5,
+        title: "movie6",
+        body: "body6",
+        author: "author6",
+        imageLink: "",
+        type: "type6",
+        hashtags: ["hash6","hash66"]
+      }, {
+        id: 6,
+        title: "movie7",
+        body: "body7",
+        author: "author7",
+        imageLink: "",
+        //type: "",
+        hashtags: ["hash7","hash77","hash777"]
       }
     ]
   }
