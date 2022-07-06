@@ -1,4 +1,13 @@
-const MOVIES = [
+import { Content } from '../models/content';
+
+export const DEFAULTMOVIECONTENT: Content = {
+  id: -1,
+  title: 'NOT FOUND',
+  author: "NOT VALID",
+  type: "NO DATA"
+}
+
+export const MOVIES: Content[] = [
 
     {
       id: 0,
