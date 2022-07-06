@@ -24,4 +24,8 @@ img {
     background-color: gray;
     color: white;
   }
+
+  &.single-item-on-app-component {
+    box-shadow: 8px 16px 24px blueviolet;
+  }
 }
