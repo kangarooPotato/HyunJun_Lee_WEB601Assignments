@@ -1,4 +1,6 @@
-const MOVIES = [
+import { Content } from "../models/content";
+
+export const MOVIES: Content[] = [
 
     {
       id: 0,

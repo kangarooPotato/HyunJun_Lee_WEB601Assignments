@@ -1,5 +1,5 @@
 <body>
 
-    <app-content-card *ngFor="let singleMovie of favouriteMovieList; even as isEven" [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven"></app-content-card>
+    <app-content-card *ngFor="let singleMovie of content; even as isEven" [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven"></app-content-card>
 
 </body>
