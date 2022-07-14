@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { DEFAULTMOVIECONTENT } from './data/MOVIECONTENTTYPE';
+import { DEFAULTMOVIECONTENT } from './data/mock-MOVIE';
 import { Content } from "./models/content";
 import { MovieService } from './services/movie.service';
 

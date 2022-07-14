@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { MOVIES, DEFAULTMOVIECONTENT } from '../data/MOVIECONTENTTYPE';
+import { MOVIES, DEFAULTMOVIECONTENT } from '../data/mock-MOVIE';
 import { Content } from '../models/content';
 
 @Injectable({
