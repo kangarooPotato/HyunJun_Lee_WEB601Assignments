@@ -37,28 +37,4 @@ export class MovieService {
     return of(MOVIES);
   }
 
-  updateContentItem(newContentItem: Content): Observable<Content[]> {
-    
-    MOVIES.forEach((oneMovie, index) => {
-      // one potential solution
-      // if (individualChessChampion.id === newContentItem.id) // found them
-      // {
-      //   individualChessChampion.title = newContentItem.title;
-      //   individualChessChampion.body = newContentItem.body;
-      //   individualChessChampion.author = newContentItem.author;
-      //   individualChessChampion.imageLink = newContentItem.imageLink;
-      //   individualChessChampion.type = newContentItem.type;
-      //   individualChessChampion.hashtags = newContentItem.hashtags;
-      //   // return;
-      // }
-      if (oneMovie.id === newContentItem.id) // found them
-      {
-        console.log("Trying method 2");
-        MOVIES[index] = newContentItem;
-        // return;
-      }
-    });
-    
-    return of(MOVIES);
-  }
 }
