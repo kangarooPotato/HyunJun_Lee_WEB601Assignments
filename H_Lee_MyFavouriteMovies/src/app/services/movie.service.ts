@@ -11,6 +11,13 @@ export class MovieService {
 
   constructor() { }
 
+
+  getContent1(): Content[] {
+    return MOVIES;
+  }
+
+  //이거 말고 아래꺼 해야하는 이유???
+
   getContent(): Observable<Content[]> {
     return of(MOVIES);
   }
