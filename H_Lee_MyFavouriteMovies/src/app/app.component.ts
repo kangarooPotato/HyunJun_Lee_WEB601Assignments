@@ -10,14 +10,14 @@ import { MovieService } from './services/movie.service';
 export class AppComponent {
   title = 'H_Lee_MyFavouriteMovies';
 
-  content: Content[] = [];
+  favouriteMovieList: Content[] = [];
 
-  constructor(private movieService: MovieService) {
+  constructor() {
 
   }
 
   ngOnInit(): void {
-    //this.content = this.movieService.getContent();
-    this.movieService.getContent().subscribe(content => this.content = content);
+    //this.favouriteMovieList = this.movieService.getContent();
+    //this.movieService.getContent().subscribe(favouriteMovieList => this.favouriteMovieList = favouriteMovieList);
   }
 }

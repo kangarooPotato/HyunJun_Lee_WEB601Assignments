@@ -11,7 +11,7 @@ export class ContentListComponent implements OnInit {
 
 
 
-  content: Content[] = [];
+  favouriteMovieList: Content[] = [];
 
   constructor(private movieService: MovieService) {
 
@@ -19,6 +19,6 @@ export class ContentListComponent implements OnInit {
 
   ngOnInit(): void {
     //this.content = this.movieService.getContent();
-    this.movieService.getContent().subscribe(content => this.content = content);
+    this.movieService.getContent().subscribe(favouriteMovieList => this.favouriteMovieList = favouriteMovieList);
   }
 }
