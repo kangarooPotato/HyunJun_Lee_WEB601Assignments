@@ -7,6 +7,7 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { DefaultTypePipe } from './default-type.pipe';
 import { DetailedContentComponent } from './detailed-content/detailed-content.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
