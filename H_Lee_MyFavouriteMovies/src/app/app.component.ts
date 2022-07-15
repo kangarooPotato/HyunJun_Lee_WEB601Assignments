@@ -33,7 +33,7 @@ export class AppComponent {
   // 이거 왜 밖에다 둠????
   checkForIdInList(idValue: string): void {
     this.movieService.getContentItem(Number(idValue)).subscribe(moviesSingleItem => {
-      console.log("앱 컴포넌트에서 콘텐츠 아이템 다시 찾음 (검색): ", moviesSingleItem);
+      console.log("앱 컴포넌트에서 콘텐츠 아이템 검색 (검색): ", moviesSingleItem);
       this.individualMovie = moviesSingleItem;
     });
   }
