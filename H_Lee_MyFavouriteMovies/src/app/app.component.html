@@ -1,3 +1,12 @@
-<app-content-card></app-content-card>
+<div class="movie-search">
+    <label>
+      Movie Search:
+      <input type="number" autofocus #idNumber>
+    </label>
+    <br>
+    <button (click)="checkForIdInList(idNumber.value)">Check for move at id</button>
+  </div>
+
+<app-content-card [movieCard]="individualMovie" class="single-item-on-app-component"></app-content-card>
 
 <app-content-list></app-content-list>
