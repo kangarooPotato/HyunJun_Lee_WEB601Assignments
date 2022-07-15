@@ -41,17 +41,17 @@ export class ContentListComponent implements OnInit {
 
     // 콘텐츠 아이템 하나 가져오기 test / 작동함
     this.movieService.getContentItem(-1).subscribe(moviesSingleItem => {
-      console.log("Got the content item: ", moviesSingleItem);
+      console.log("콘텐츠 아이템 하나 가져오기 (디폴트값 -1짜리): ", moviesSingleItem);
     });
 
-    //콘텐츠 업데이트 (contentUpdate)
+    // 콘텐츠 업데이트 (contentUpdate)
     this.movieService.updateContentItem(this.jun).subscribe(moviesArray => {
       console.log("updated hyun: ", moviesArray);
     });
 
-    //콘텐츠 추가 (addContent)
+    // 콘텐츠 추가 (addContent)
     this.movieService.inputContentItem(this.jun).subscribe(moviesArray => {
-      console.log("add jun: ", moviesArray);
+      console.log("added jun: ", moviesArray);
     });
   }
 }
