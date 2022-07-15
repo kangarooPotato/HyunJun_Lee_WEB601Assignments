@@ -33,6 +33,9 @@ export class ContentListComponent implements OnInit {
 
   }
 
+
+  //callback function 콜백 펑션인것같음.
+  
   ngOnInit(): void {
     //this.content = this.movieService.getContent();
 
@@ -53,5 +56,10 @@ export class ContentListComponent implements OnInit {
     this.movieService.inputContentItem(this.jun).subscribe(moviesArray => {
       console.log("added jun: ", moviesArray);
     });
+
+
+    // this.movieService.removeContentItem(this.jun).subscribe(moviesArray => {
+    //   console.log("remove jun: ", moviesArray);
+    // });
   }
 }

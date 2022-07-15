@@ -10,7 +10,7 @@ import { Content } from '../models/content';
 export class MovieService {
 
   constructor() { }
-
+  
   getContent(): Observable<Content[]>{
     return of (MOVIES);
   }
@@ -58,9 +58,18 @@ export class MovieService {
     return of (MOVIES);
   }
 
-  removeContentItem():Observable<Content[]> {
+  removeContentItem(removeMoieItem: Content):Observable<Content[]> {
 
     //delet movie data
+
+    // MOVIES.forEach((individualMovie, i) => {
+
+    //   if (individualMovie.id === removeMoieItem.id) // 업데이트 할 파일 찾기
+    //   {
+    //     console.log("같은 ID를 가진 컨텐츠를 찾았습니다");
+    //     MOVIES[i].pop;
+    //   }
+    // });
 
     return of (MOVIES);
   }

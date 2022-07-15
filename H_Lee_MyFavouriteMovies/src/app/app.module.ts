@@ -24,6 +24,7 @@ import { ContentSearchComponent } from './content-search/content-search.componen
   imports: [
     BrowserModule,
     AppRoutingModule
+    //app-routing.module
   ],
   providers: [],
   bootstrap: [AppComponent]
