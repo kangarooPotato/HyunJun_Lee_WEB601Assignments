@@ -11,7 +11,7 @@ import { MovieService } from '../services/movie.service';
 export class DetailedContentComponent implements OnInit {
 
   id?: number;
-  movieDetail?: Content;
+  movieCard?: Content;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
@@ -22,20 +22,27 @@ export class DetailedContentComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.id = Number(this.route.snapshot.paramMap.get('id'));
 
-    this.movieService.getContentItem(this.id).subscribe((c) => {
-      this.movieDetail = c;
-    });
+    this.route.paramMap.subscribe((params) => {
+      this.id = Number(params.get("id") ?? 0);
 
-    this.movieService.getContentItem(this.id).subscribe(singleMovie => {
-      if (singleMovie) {
-        this.movieDetail = singleMovie;
-      } else {
-        this.router.navigate(['/contentNotFound'])
-      }
-    })
+      this.movieService.getContentItem(this.id).subscribe((movieCard) => {
+        this.movieCard = movieCard;
+      });
+  });
 
+    // this.id = Number(this.route.snapshot.paramMap.get('id'));
+
+    // this.movieService.getContentItem(this.id).subscribe((c) => {
+    //   this.movieDetail = c;
+    // });
+
+    // this.movieService.getContentItem(this.id).subscribe(singleMovie => {
+    //   if (singleMovie) {
+    //     this.movieDetail = singleMovie;
+    //   } else {
+    //     this.router.navigate(['/contentNotFound'])
+    //   }
+    // });
   }
-
 }

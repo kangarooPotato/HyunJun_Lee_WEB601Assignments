@@ -10,7 +10,7 @@ import { Content } from '../models/content';
 export class MovieService {
 
   constructor() { }
-  
+
   getContent(): Observable<Content[]>{
     return of (MOVIES);
   }
@@ -32,7 +32,7 @@ export class MovieService {
   // 넣기
   inputContentItem(newMoiveItem: Content): Observable<Content[]> {
 
-     // if there aren't some chess champions with the same id number, push the array item
+     // if there aren't some movie with the same id number, push the array item
      // 만약 id가 같으면 빠꾸 먹이고 그게 아니라면 넣으셈 (체크하는거임 ㅇㅇ)
      if (!MOVIES.some(movie => movie.id === newMoiveItem.id)) {
       //console.log("there is a movie that has same ID")

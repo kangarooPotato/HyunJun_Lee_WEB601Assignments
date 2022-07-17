@@ -1,0 +1,15 @@
+.movie-search {
+    padding: 16px 0;
+    margin: 10px;
+    text-align: center;
+    label,
+    button {
+      display: inline-block;
+    }
+  }
+  .error {
+    padding: 32px;
+    text-align: center;
+    color: red;
+    background-color: #222222;
+  }

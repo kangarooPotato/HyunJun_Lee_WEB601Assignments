@@ -1,1 +1,37 @@
-<p>detailed-content works!</p>
+<div *ngIf="movieCard" class="movieCard">
+    <div>
+      <!-- <h1>{{ topmovieCard?.title }}</h1> -->
+      <h1>
+        <a [routerLink]="['/detail', movieCard.id]">{{ movieCard.title }}</a>
+      </h1>
+      
+      
+      <img *ngIf="movieCard.imageLink" [src]="movieCard.imageLink" >
+
+        <p *ngIf="movieCard.body">
+          {{ movieCard.body }}
+        </p>
+
+        <h3>{{ movieCard.author}}</h3>
+        <h4>{{ movieCard.type }}</h4>
+        
+        <div *ngIf="movieCard.hashtags && movieCard.hashtags.length > 0">
+          <span *ngFor="let eachhashtag of movieCard.hashtags"> #{{ eachhashtag }}</span>
+        </div>
+
+    </div>
+<hr>
+    <div>
+        <a routerLink="/list">Back to list</a>
+      </div>
+
+      <div>
+        <a *ngIf="movieCard.id > 0" [routerLink]="['/detail', movieCard.id - 1]">
+          Previous movie
+        </a><br>
+        <a *ngIf="movieCard.id > 0" [routerLink]="['/detail', movieCard.id + 1]">
+            Next movie
+          </a>
+      </div>
+
+  </div>
