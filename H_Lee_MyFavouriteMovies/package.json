@@ -1,6 +1,6 @@
 {
   "name": "h-lee-my-favourite-movies",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -9,7 +9,8 @@
     "test": "ng test",
     "generateinterface": "ng generate interface",
     "generateclass": "ng generate class",
-    "generatecomponent": "ng generate component"
+    "generatecomponent": "ng generate component",
+    "generatepipe": "ng g pipe"
   },
   "private": true,
   "dependencies": {
