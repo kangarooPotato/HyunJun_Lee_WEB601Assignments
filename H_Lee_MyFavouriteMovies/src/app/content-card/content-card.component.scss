@@ -40,4 +40,8 @@ img {
     background-color: lightgreen;
     color: green;
   }
+  &.movie-found {
+    border-width: 20px;
+    border-color: yellow;
+  }
 }

@@ -3,26 +3,56 @@
 <!-- <app-content-card *ngFor="let singleMovie of favouriteMovieList; even as isEven" [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven"></app-content-card> -->
 
 <body>
-    <input #cardName> {{cardName.value}}
+
+    <div><label>
+        Author name search:
+        <!-- <input #authorToSearchFor> -->
+
+        <input autofocus #authorToSearchFor>
+
+
+      </label>
+      <button (click)="checkForAuthorInList(authorToSearchFor.value)">Check for Author</button>
+    </div>
+    <div class="author-error" [style]="authorSearchMessage.found ? 'color: blue' : 'color: grey'">
+      {{ authorSearchMessage.message }}
+    </div>
+
+    <!-- <input #cardName> {{cardName.value}} -->
     <hr>
     
     <!-- Action type -->
     <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Action'); even as isEven"
-    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="action-type"></app-content-card>
+    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="action-type"
+    
+    [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
+
+    <!-- [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
+    이거 뭔지 진짜 하나도 이해 안감.. -->
+</app-content-card>
     
     
     <!-- Drama type -->
     <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Drama'); even as isEven"
-    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="drama-type"></app-content-card>
+    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="drama-type"
+    
+    [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
+</app-content-card>
     
 
     <!-- Same Type type -->
     <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'SameType'); even as isEven"
-    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="same-type"></app-content-card>
+    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="same-type"
+    
+    [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
+</app-content-card>
     
     
     <!-- No Type -->
     <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType); even as isEven"
-    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="no-type"></app-content-card>
+    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="no-type"
+    
+    [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
+</app-content-card>
     
 </body>

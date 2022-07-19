@@ -10,6 +10,12 @@ export class ContentListComponent implements OnInit {
 
   favouriteMovieList: Content[];
 
+  types: string[] = ["", "Action", "Drama", "SameType"];
+  authorSearchMessage = {
+    message: "",
+    found: false
+  };
+
   constructor() {
     this.favouriteMovieList = [
       {
@@ -56,7 +62,7 @@ export class ContentListComponent implements OnInit {
         id: 5,
       title: "movie6",
       body: "body6",
-      author: "author6",
+      author: "Author",
       imageLink: "",
       type: "SameType",
       hashtags: ["hash6","hash66"]
@@ -64,7 +70,7 @@ export class ContentListComponent implements OnInit {
       id: 6,
       title: "movie7",
       body: "body7",
-      author: "author7",
+      author: "author two",
       imageLink: "",
       //type: "",
       hashtags: ["hash7","hash77","hash777"]
@@ -73,6 +79,16 @@ export class ContentListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  checkForAuthorInList(authorNameValue: string): void {
+    if (this.favouriteMovieList.some(movie => movie.author.toLowerCase() === authorNameValue.toLowerCase())) {
+      this.authorSearchMessage.message = "Author Found";
+      this.authorSearchMessage.found = true;
+    } else {
+      this.authorSearchMessage.message = "Author Not Found";
+      this.authorSearchMessage.found = false;
+    }
   }
 
 }
