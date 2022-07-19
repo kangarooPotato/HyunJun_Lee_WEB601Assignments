@@ -1,5 +1,28 @@
+
+
+<!-- <app-content-card *ngFor="let singleMovie of favouriteMovieList; even as isEven" [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven"></app-content-card> -->
+
 <body>
+    <input #cardName> {{cardName.value}}
+    <hr>
+    
+    <!-- Action type -->
+    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Action'); even as isEven"
+    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="action-type"></app-content-card>
+    
+    
+    <!-- Drama type -->
+    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Drama'); even as isEven"
+    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="drama-type"></app-content-card>
+    
 
-    <app-content-card *ngFor="let singleMovie of favouriteMovieList; even as isEven" [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven"></app-content-card>
-
+    <!-- Same Type type -->
+    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'SameType'); even as isEven"
+    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="same-type"></app-content-card>
+    
+    
+    <!-- No Type -->
+    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType); even as isEven"
+    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="no-type"></app-content-card>
+    
 </body>

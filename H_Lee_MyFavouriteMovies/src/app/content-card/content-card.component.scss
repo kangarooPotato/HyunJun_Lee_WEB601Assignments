@@ -24,4 +24,20 @@ img {
     background-color: gray;
     color: white;
   }
+  &.no-type {
+    background-color: red;
+    color: white;
+  }
+  &.drama-type {
+    background-color: lightcoral;
+    color: white;
+  }
+  &.action-type {
+    background-color: lightseagreen;
+    color: white;
+  }
+  &.same-type {
+    background-color: lightgreen;
+    color: green;
+  }
 }

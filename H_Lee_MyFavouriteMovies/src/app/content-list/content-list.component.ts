@@ -42,7 +42,7 @@ export class ContentListComponent implements OnInit {
         //body: "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency.",
         author: "Christopher Nolan",
         imageLink: "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_FMjpg_UX700_.jpg",
-        type: "Sci-Fi",
+        type: "SameType",
         //hashtags: ["Leonardo DiCaprio","Joseph Gordon","LevittElliot Page"]
       }, {
         id: 4,
@@ -58,7 +58,7 @@ export class ContentListComponent implements OnInit {
       body: "body6",
       author: "author6",
       imageLink: "",
-      type: "type6",
+      type: "SameType",
       hashtags: ["hash6","hash66"]
     }, {
       id: 6,
