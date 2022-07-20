@@ -10,19 +10,14 @@ export class FilterMovieTypePipe implements PipeTransform {
   //   return null;
   // }
 
+
+  // 만약 타입이 없으면 어떻게 되는거임? if는 있고.. else가 없는데???
   transform(listOfMovies: Content[], typeToFilterBy?: string): Content[] {
     return listOfMovies.filter(oneMovie => {
-      // Write the code that decides if we keep the chess player or not
       if (typeToFilterBy) {
-        // only keep chess players that have their type set to be the same value as typeToFilterBy
+        // only keep movies that have their type set to be the same value as typeToFilterBy
         // Can do the long way with an if statement
-        // if (typeToFilterBy === chessPlayer.type) {
-        //   return true;
-        // }
-        // else {
-        //   return false;
-        // }
-        // can return just the comparison directly
+
         return typeToFilterBy === oneMovie.type;
       }
       return !oneMovie.type;

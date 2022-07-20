@@ -1,6 +1,12 @@
 
+{{ today }}
+<br>
+{{ today | date}}
+<br>
+{{ today | date | uppercase }}
+<br>
+{{ today | date:"dd/MM/yy" }}
 
-<!-- <app-content-card *ngFor="let singleMovie of favouriteMovieList; even as isEven" [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven"></app-content-card> -->
 
 <body>
 
@@ -14,7 +20,8 @@
       </label>
       <button (click)="checkForAuthorInList(authorToSearchFor.value)">Check for Author</button>
     </div>
-    <div class="author-error" [style]="authorSearchMessage.found ? 'color: blue' : 'color: grey'">
+    <div class="author-error" [style]="authorSearchMessage.found ? 'color: blue' : 'color: grey'"> 
+        <!-- style 뭐임??? -->
       {{ authorSearchMessage.message }}
     </div>
 
@@ -27,8 +34,7 @@
     
     [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
 
-    <!-- [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
-    이거 뭔지 진짜 하나도 이해 안감.. -->
+    <!-- [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''"> 이거 뭔지 진짜 하나도 이해 안감.. -->
 </app-content-card>
     
     

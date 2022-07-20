@@ -10,10 +10,13 @@ export class ContentListComponent implements OnInit {
 
   favouriteMovieList: Content[];
 
+  today = new Date();
+
   types: string[] = ["", "Action", "Drama", "SameType"];
+  
   authorSearchMessage = {
-    message: "",
-    found: false
+    message: "", //처음에 서치창 아래 표시되는 메시지는 나타냄.
+    found: false //false여야지 회색 true면 파란색인데 기본값은 false로 설정!
   };
 
   constructor() {
@@ -82,12 +85,14 @@ export class ContentListComponent implements OnInit {
   }
 
   checkForAuthorInList(authorNameValue: string): void {
+
+    //받은 값을 전부 lower case로 변경해서 if and else 돌려줌
     if (this.favouriteMovieList.some(movie => movie.author.toLowerCase() === authorNameValue.toLowerCase())) {
-      this.authorSearchMessage.message = "Author Found";
-      this.authorSearchMessage.found = true;
+      this.authorSearchMessage.message = "Author Found"; //만약 있으면 성공 메시지 띄우셈
+      this.authorSearchMessage.found = true; // 그리고 값도 true로 변경
     } else {
-      this.authorSearchMessage.message = "Author Not Found";
-      this.authorSearchMessage.found = false;
+      this.authorSearchMessage.message = "Author Not Found"; //만약 없으면 실패 메시지
+      this.authorSearchMessage.found = false; // 값도 false로
     }
   }
 
