@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Content } from './models/content';
+import { Content } from '../models/content';
 
 @Pipe({
   name: 'filterMovieType'
