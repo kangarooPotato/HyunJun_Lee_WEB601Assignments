@@ -21,7 +21,9 @@
       <h1>{{ movieCard.title }}</h1>
       
       
-      <img *ngIf="movieCard.imageLink" [src]="movieCard.imageLink" (click)="clickEvent()">
+      <!-- <img *ngIf="movieCard.imageLink" [src]="movieCard.imageLink" (click)="clickEvent()"> -->
+      <img *ngIf="movieCard.imageLink; else defaultMovieImage" [src]="movieCard.imageLink"
+      (click)="clickEvent()">
 
         <p *ngIf="movieCard.body">
           {{ movieCard.body }}
@@ -36,3 +38,10 @@
 
     </div>
   </div>
+
+  <!-- https://www.freeiconspng.com/img/23485 -->
+
+  <ng-template #defaultMovieImage>
+    <img alt="Default Movie Image"
+      src="https://www.freeiconspng.com/uploads/no-image-icon-6.png">
+  </ng-template>
