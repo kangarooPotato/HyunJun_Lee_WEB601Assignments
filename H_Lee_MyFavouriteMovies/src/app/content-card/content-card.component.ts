@@ -8,6 +8,7 @@ import { Content } from '../models/content';
 })
 export class ContentCardComponent implements OnInit {
   @Input() movieCard?: Content;
+  @Input() isLast?: boolean;
 
 
   clickEvent() {

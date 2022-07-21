@@ -27,10 +27,17 @@
 
     <!-- <input #cardName> {{cardName.value}} -->
     <hr>
+
+        <!-- No Type -->
+        <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType); even as isEven; last as isLast"
+        [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="no-type"
+        
+        [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
+    </app-content-card>
     
     <!-- Action type -->
-    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Action'); even as isEven"
-    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="action-type"
+    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Action'); even as isEven; last as isLast"
+    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="action-type" [isLast]="isLast"
     
     [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
 
@@ -39,7 +46,7 @@
     
     
     <!-- Drama type -->
-    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Drama'); even as isEven"
+    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Drama'); even as isEven; last as isLast"
     [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="drama-type"
     
     [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
@@ -47,18 +54,11 @@
     
 
     <!-- Same Type type -->
-    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'SameType'); even as isEven"
+    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'SameType'); even as isEven; last as isLast"
     [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="same-type"
     
     [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
 </app-content-card>
-    
-    
-    <!-- No Type -->
-    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType); even as isEven"
-    [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" class="no-type"
-    
-    [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
-</app-content-card>
+
     
 </body>

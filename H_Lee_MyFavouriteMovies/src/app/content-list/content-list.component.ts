@@ -75,7 +75,7 @@ export class ContentListComponent implements OnInit {
       body: "body7",
       author: "author two",
       imageLink: "",
-      //type: "",
+      type: "",
       hashtags: ["hash7","hash77","hash777"]
       }
     ]

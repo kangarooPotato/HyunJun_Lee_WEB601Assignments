@@ -18,7 +18,7 @@ export class HighlightImportantDataDirective {
   @Input() colour: string = '';
 
   // '하이라이트타입'은 오직 타입, 타이틀, 태그 + 언디파인드만 설정 가능하도록 세팅
-  @Input() highlightType?: "type" | "title" | "tag";
+  @Input() highlightType?: "type" | "title" | "tag" | "author";
   // the next step would be to make an ENUM of these 3 types, so we can use that everywhere instead
   // What is ENUM..?
 
@@ -36,33 +36,44 @@ export class HighlightImportantDataDirective {
 
   // 이벤트리스너 같은 거 같음.. 마우스를 올리면 = mouseover, 스타일을 지정하고
   @HostListener("mouseover") onMouseOver() {
+    
     // this.elm.nativeElement.style.border = "4px solid pink"
-    if (this.highlightType === "type") {
+    if (this.highlightType === "type" || this.highlightType === "author") {
       // set type background color
-      this.elm.nativeElement.style.border = "4px solid red";
+      this.elm.nativeElement.style.border = "4px solid orange";
     }
 
-    if (this.highlightType === "tag") {
+    if (this.highlightType === "tag" || this.highlightType === "author") {
       // set tag font color
-      this.elm.nativeElement.style.color = 'darkred';
+      this.elm.nativeElement.style.color = 'orange';
     }
   }
 
   // 마우스 내리면 none으로!
   @HostListener("mouseout") onMouseOut() {
-    this.elm.nativeElement.style.border = "none"
+    // this.elm.nativeElement.style.border = "none"
+    if (this.highlightType === "type" || this.highlightType === "author") {
+      this.elm.nativeElement.style.border = "none"
+    }
+
+    if (this.highlightType === "tag" || this.highlightType === "author") {
+      this.elm.nativeElement.style.color = this.initialColourOfTagText;
+    }
+
 
     //만약 색을 원래대로 되돌리고싶으면 어떻게 함?
     // this.elm.nativeElement.style.color = "none"
 
     // 는 이게 정답~
-    // reset tag font color back to original value
-    this.elm.nativeElement.style.color = this.initialColourOfTagText;
+    // this.elm.nativeElement.style.color = this.initialColourOfTagText;
   }
 
   // click on title 타이틀 클릭시 변경, 기본값이 false로 되어있어서 누르면 true가 댐
   @HostListener("click") onClick() {
-    this.isHighlighted = !this.isHighlighted;
+    // this.isHighlighted = !this.isHighlighted;
+    if (this.highlightType === 'title' || this.highlightType === "author") {
+      this.isHighlighted = !this.isHighlighted;
+    }
   }
 
 
