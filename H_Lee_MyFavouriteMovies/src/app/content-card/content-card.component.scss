@@ -7,6 +7,19 @@ img {
     width: 300px;
 }
 
+span {
+  font-family: Arial, Helvetica, sans-serif;
+
+  // important 말고 뭐가 더 있음? 그리고 색 왜 무슨 바닐라 색임? 뭐가 중요하다는겨
+  background-color: lightyellow !important;
+  color: darkcyan;
+  padding: 5px;
+  display: inline-block;
+  margin: 0 8px;
+  font-weight: bold;
+  border-radius: 7px;
+}
+
 
 :host {
   border: 5px solid lightgray;
