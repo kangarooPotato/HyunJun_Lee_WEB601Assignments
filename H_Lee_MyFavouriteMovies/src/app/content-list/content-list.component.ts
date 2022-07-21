@@ -65,7 +65,7 @@ export class ContentListComponent implements OnInit {
         id: 5,
       title: "movie6",
       body: "body6",
-      author: "Author",
+      author: "Author6",
       imageLink: "",
       type: "SameType",
       hashtags: ["hash6","hash66"]

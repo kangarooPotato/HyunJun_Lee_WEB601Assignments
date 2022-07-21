@@ -32,7 +32,7 @@
         </p>
 
         <!-- author를 ts에서 읽을수있는 타입으로 정의해줬으니 값 줌. -->
-        <h3 *ngIf="isLast else notLastElement" appHighlightImportantData highlightType="author" colour="lightblue">{{ movieCard.author}}</h3>
+        <h3 appHighlightImportantData highlightType="author" colour="lightblue">{{ movieCard.author}}</h3>
 
         <!-- Hightlight type 은 type 으로 설정 -->
         <h4 appHighlightImportantData highlightType="type">{{ movieCard.type }}</h4>
