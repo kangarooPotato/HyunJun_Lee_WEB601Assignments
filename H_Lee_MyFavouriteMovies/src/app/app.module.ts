@@ -9,6 +9,7 @@ import { DetailedContentComponent } from './detailed-content/detailed-content.co
 import { AppRoutingModule } from './app-routing.module';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContentSearchComponent } from './content-search/content-search.component';
+import { TopNavigationComponent } from './top-navigation/top-navigation.component';
 
 
 @NgModule({
@@ -19,7 +20,9 @@ import { ContentSearchComponent } from './content-search/content-search.componen
     DefaultTypePipe,
     DetailedContentComponent,
     PageNotFoundComponent,
-    ContentSearchComponent
+    ContentSearchComponent,
+    TopNavigationComponent,
+    TopNavigationComponent
   ],
   imports: [
     BrowserModule,
