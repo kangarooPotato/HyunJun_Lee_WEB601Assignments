@@ -12,7 +12,7 @@
 
     <div><label>
         Author name search:
-        <!-- <input #authorToSearchFor> -->
+        <!-- <input #authorToSearchFor>/ -->
 
         <input autofocus #authorToSearchFor>
 
@@ -30,7 +30,7 @@
 
         <!-- No Type -->
         <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType); even as isEven; last as isLast"
-        [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" [class.is-last]="isLast" class="no-type"
+        [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" [class.is-last]="isLast" class="no-type" [isLast]="isLast"
         
         [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
     </app-content-card>
@@ -46,7 +46,7 @@
     
     
     <!-- Drama type -->
-    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Drama'); even as isEven; last as isLast"
+    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'Drama'); even as isEven; last as isLast" [isLast]="isLast"
     [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" [class.is-last]="isLast" class="drama-type"
     
     [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">
@@ -54,7 +54,7 @@
     
 
     <!-- Same Type type -->
-    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'SameType'); even as isEven; last as isLast"
+    <app-content-card *ngFor="let singleMovie of (favouriteMovieList | filterMovieType: 'SameType'); even as isEven; last as isLast" [isLast]="isLast"
     [movieCard]="singleMovie" [class.is-even]="isEven" [class.is-odd]="!isEven" [class.is-last]="isLast" class="same-type"
     
     [class]="singleMovie.author.toLowerCase() === authorToSearchFor.value.toLowerCase() ? 'movie-found' : ''">

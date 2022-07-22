@@ -14,6 +14,12 @@
     </div>
   </div> -->
 
+  <ng-template #isNotLast>
+    <div class="author">
+      {{ movieCard?.author }}
+    </div>
+  </ng-template>
+
 
   <div *ngIf="movieCard" class="movieCard">
     <div>
@@ -32,7 +38,9 @@
         </p>
 
         <!-- author를 ts에서 읽을수있는 타입으로 정의해줬으니 값 줌. -->
-        <h3 appHighlightImportantData highlightType="author" colour="lightblue">{{ movieCard.author}}</h3>
+        <!-- [isLast] 를 넣어서 뭐함??-->
+        
+        <h3 *ngIf="isLast; else isNotLast" appHighlightImportantData highlightType="author" colour="lightblue" [isLast] >{{ movieCard.author}}</h3>
 
         <!-- Hightlight type 은 type 으로 설정 -->
         <h4 appHighlightImportantData highlightType="type">{{ movieCard.type }}</h4>
@@ -50,13 +58,8 @@
 
   <!-- https://www.freeiconspng.com/img/23485 -->
 
+  <!-- 템플릿 레퍼선스 베리어블 -->
   <ng-template #defaultMovieImage>
     <img alt="Default Movie Image"
       src="https://www.freeiconspng.com/uploads/no-image-icon-6.png">
-  </ng-template>
-
-  <ng-template #notLastElement>
-    <div class="author">
-      {{ movieCard?.author }}
-    </div>
   </ng-template>

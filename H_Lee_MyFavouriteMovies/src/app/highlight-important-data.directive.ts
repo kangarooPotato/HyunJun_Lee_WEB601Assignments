@@ -18,7 +18,12 @@ export class HighlightImportantDataDirective {
   @Input() colour: string = '';
 
   // '하이라이트타입'은 오직 타입, 타이틀, 태그 + 언디파인드만 설정 가능하도록 세팅
+  // 리스트릭팅
+
   @Input() highlightType?: "type" | "title" | "tag" | "author";
+
+  @Input() isLast?: boolean;
+  
   // the next step would be to make an ENUM of these 3 types, so we can use that everywhere instead
   // What is ENUM..?
 
@@ -31,6 +36,7 @@ export class HighlightImportantDataDirective {
   //이건 왜 컨스트럭터 씀?
   constructor(private elm: ElementRef) {
     this.initialColourOfTagText = this.elm.nativeElement.style.color;
+    // this.isHighlighted = false;
   }
 
 
@@ -41,6 +47,8 @@ export class HighlightImportantDataDirective {
     if (this.highlightType === "type" || this.highlightType === "author") {
       // set type background color
       this.elm.nativeElement.style.border = "4px solid orange";
+
+
     }
 
     if (this.highlightType === "tag" || this.highlightType === "author") {
@@ -54,6 +62,7 @@ export class HighlightImportantDataDirective {
     // this.elm.nativeElement.style.border = "none"
     if (this.highlightType === "type" || this.highlightType === "author") {
       this.elm.nativeElement.style.border = "none"
+
     }
 
     if (this.highlightType === "tag" || this.highlightType === "author") {

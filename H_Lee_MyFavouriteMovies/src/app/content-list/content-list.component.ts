@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Content } from '../models/content';
 
 @Component({
@@ -7,6 +7,8 @@ import { Content } from '../models/content';
   styleUrls: ['./content-list.component.scss']
 })
 export class ContentListComponent implements OnInit {
+
+  @Input() isLast?: boolean;
 
   favouriteMovieList: Content[];
 
@@ -95,5 +97,7 @@ export class ContentListComponent implements OnInit {
       this.authorSearchMessage.found = false; // 값도 false로
     }
   }
+
+
 
 }
