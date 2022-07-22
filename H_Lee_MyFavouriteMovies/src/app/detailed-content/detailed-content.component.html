@@ -29,7 +29,7 @@
         <a *ngIf="movieCard.id > 0" [routerLink]="['/detail', movieCard.id - 1]">
           Previous movie
         </a><br>
-        <a *ngIf="movieCard.id > 0" [routerLink]="['/detail', movieCard.id + 1]">
+        <a *ngIf="movieCard.id > -1" [routerLink]="['/detail', movieCard.id + 1]">
             Next movie
           </a>
       </div>

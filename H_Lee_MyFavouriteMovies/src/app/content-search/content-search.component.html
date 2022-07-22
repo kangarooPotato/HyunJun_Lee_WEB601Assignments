@@ -9,6 +9,7 @@
   
   <app-content-card *ngIf="individualMovie.id !== -1" [movieCard]="individualMovie"
     class="single-item-on-app-component"></app-content-card>
+
   <div class="error" *ngIf="individualMovie.id === -1">
     Error, no movie at that id number
   </div>

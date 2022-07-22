@@ -12,15 +12,21 @@ export class ContentSearchComponent implements OnInit {
 
   individualMovie: Content = DEFAULTMOVIECONTENT;
 
+  curruntItem = 1;
+
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
 
-    this.movieService.getContentItem(0).subscribe(moviesSingleItem => {
+
+    // 기본값 세팅 창 열었을때 보여주는거
+    this.movieService.getContentItem(this.curruntItem).subscribe(moviesSingleItem => {
       console.log("App component - Got the content item: ", moviesSingleItem);
       this.individualMovie = moviesSingleItem;
     });
   }
+
+  //
   checkForIdInList(idValue: string): void {
     this.movieService.getContentItem(Number(idValue)).subscribe(moviesSingleItem => {
       console.log("App component - Got the content item AGAIN: ", moviesSingleItem);

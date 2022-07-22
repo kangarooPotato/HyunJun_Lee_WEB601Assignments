@@ -1,3 +1,4 @@
+
 .movieCard {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -12,6 +13,7 @@ img {
 
 
 :host {
+  text-align: center;
   border: 5px solid lightgray;
   border-radius: 35px;
   display: block;
