@@ -25,13 +25,26 @@
         <a routerLink="/list">Back to list</a>
       </div>
 
-      <div>
+      <!-- <div>
         <a *ngIf="movieCard.id > 0" [routerLink]="['/detail', movieCard.id - 1]">
           Previous movie
         </a><br>
         <a *ngIf="movieCard.id > 0" [routerLink]="['/detail', movieCard.id + 1]">
             Next movie
           </a>
-      </div>
+      </div> -->
 
+      <!-- ng-container 이거 fixed name임? router-outlet 같이?-->
+      <ng-container *ngIf="movieCard.id">
+        <a *ngIf="movieCard.id > 0" [routerLink]="['/detail', movieCard.id - 1]">
+          Previous movie
+        </a>
+      </ng-container>
+      <br>
+      <!-- <ng-container *ngIf="movieCard.id > 0"> 이거 왜 못씀??? -->
+      <ng-container *ngIf="movieCard.id">
+        <a *ngIf="movieCard.id >= 0" [routerLink]="['/detail', movieCard.id + 1]">
+          Next movie
+        </a>
+      </ng-container>
   </div>
