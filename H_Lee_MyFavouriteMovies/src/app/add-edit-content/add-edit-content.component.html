@@ -1,0 +1,26 @@
+<h1>Add Content</h1>
+<label>
+  Title
+  <input [(ngModel)]="newContent.title">
+</label>
+<label>
+  Body
+  <input [(ngModel)]="newContent.body">
+</label>
+<label>
+  Author
+  <input [(ngModel)]="newContent.author">
+</label>
+<label>
+  Image Link
+  <input [(ngModel)]="newContent.imageLink">
+</label>
+<label>
+  Type
+  <input [(ngModel)]="newContent.type">
+</label>
+<!-- <label>
+  Hashtags
+  <input [(ngModel)]="newContent.hashtags">
+</label> -->
+<button (click)="addContent()">Add Content</button>

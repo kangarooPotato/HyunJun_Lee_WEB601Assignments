@@ -6,6 +6,7 @@ import { ContentListComponent } from './content-list/content-list.component';
 import { DetailedContentComponent } from './detailed-content/detailed-content.component';
 import { ContentSearchComponent } from './content-search/content-search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AddEditContentComponent } from './add-edit-content/add-edit-content.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,12 @@ const routes: Routes = [
   {
     path: "search",
     component: ContentSearchComponent,
-  },{
+  },
+  {
+    path: "add",
+    component: AddEditContentComponent
+  },
+  {
   path: "**",
     component: PageNotFoundComponent,
   }

@@ -11,6 +11,12 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ContentSearchComponent } from './content-search/content-search.component';
 import { TopNavigationComponent } from './top-navigation/top-navigation.component';
 
+import { HttpClientModule } from "@angular/common/http";
+import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
+import { InMemoryDataService } from "./services/in-memory-data.service";
+import { AddEditContentComponent } from './add-edit-content/add-edit-content.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -22,12 +28,19 @@ import { TopNavigationComponent } from './top-navigation/top-navigation.componen
     PageNotFoundComponent,
     ContentSearchComponent,
     TopNavigationComponent,
-    TopNavigationComponent
+    AddEditContentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
     //app-routing.module
+    HttpClientModule,
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService,
+      {
+       delay: 1000,
+      })
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,17 +3,33 @@ import { Observable, of } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { DEFAULTMOVIECONTENT, MOVIES } from '../data/mock-MOVIE';
 import { Content } from '../models/content';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
 
-  constructor() { }
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-type':
+        'application/json'
+    })
+  };
 
-  getContent(): Observable<Content[]>{
-    return of (MOVIES);
-  }
+  constructor(private http: HttpClient) { }
+
+  // getContent(): Observable<Content[]>{
+  //   return of (MOVIES);
+  // }
+  getContent() : Observable<Content[]>{
+    return this.http.get<Content[]>("api/movies");
+    }
+
+  addContent(newContentItem: Content): Observable<Content>{
+    return this.http.post<Content>("api/movies", newContentItem, this.httpOptions)
+    }
+      
 
   // 컨텐츠 찾아오기
   // 그니까 getContent임 for반복문으로 하나하나 date폴더에서 저 위에 import 해둔 mock-MOVIE에서 긁어옴
