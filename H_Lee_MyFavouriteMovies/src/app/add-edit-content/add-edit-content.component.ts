@@ -1,5 +1,6 @@
-import { Content } from '@angular/compiler/src/render3/r3_ast';
+
 import { Component, OnInit } from '@angular/core';
+import { Content } from '../models/content';
 import { MovieService } from '../services/movie.service';
 
 @Component({
