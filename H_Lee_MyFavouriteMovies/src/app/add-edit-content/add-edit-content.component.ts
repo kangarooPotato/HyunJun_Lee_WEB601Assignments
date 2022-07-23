@@ -23,11 +23,15 @@ export class AddEditContentComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       let id = Number(params.get("id") ?? -1);
+      
       this.newContent.id = id;
-      // this.chessChampionService.getContentItem(this.id)
-      //   .subscribe((individualChessPlayer) => {
-      //     this.individualChessPlayer = individualChessPlayer;
-      //   });
+
+      if (this.newContent.id !== -1) {
+        this.movieService.getContentItem(this.newContent.id)
+          .subscribe((movieServiceToBeUpdated) => {
+            this.newContent = movieServiceToBeUpdated;
+          });
+      }
     });
   }
 
