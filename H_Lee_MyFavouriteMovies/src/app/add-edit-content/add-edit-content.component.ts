@@ -1,4 +1,4 @@
-
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Content } from '../models/content';
 import { MovieService } from '../services/movie.service';
@@ -12,7 +12,8 @@ export class AddEditContentComponent implements OnInit {
 
   newContent: Content;
   
-  constructor(private movieService: MovieService) {
+  constructor(private movieService: MovieService, private route: ActivatedRoute) {
+    
     this.newContent = {
       title: '',
       author: ''
@@ -20,6 +21,14 @@ export class AddEditContentComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      let id = Number(params.get("id") ?? -1);
+      this.newContent.id = id;
+      // this.chessChampionService.getContentItem(this.id)
+      //   .subscribe((individualChessPlayer) => {
+      //     this.individualChessPlayer = individualChessPlayer;
+      //   });
+    });
   }
 
   addContent(): void {
@@ -30,6 +39,17 @@ export class AddEditContentComponent implements OnInit {
         author: ''
       }
       console.log("The content the server gave me back: ", newItem);
+    })
+  }
+
+  updateContent(): void {
+    console.log("Content before I sent the server: ", this.newContent);
+    this.movieService.updateContentItem(this.newContent).subscribe(() => {
+      this.newContent = {
+        title: '',
+        author: ''
+      }
+      console.log("The server updated the content");
     })
   }
 

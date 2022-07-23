@@ -1,7 +1,6 @@
 import { Component, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { ContentListComponent } from './content-list/content-list.component';
 import { DetailedContentComponent } from './detailed-content/detailed-content.component';
 import { ContentSearchComponent } from './content-search/content-search.component';
@@ -29,6 +28,10 @@ const routes: Routes = [
   {
     path: "add",
     component: AddEditContentComponent
+  },
+  {
+    path: "updateContent/:id",
+    component: AddEditContentComponent,
   },
   {
   path: "**",

@@ -1,26 +1,34 @@
-<h1>Add Content</h1>
+<!-- <h1>Add Content</h1> -->
+
+<h1 *ngIf="this.newContent.id === -1">Add Content</h1>
+<h1 *ngIf="this.newContent.id !== -1">Update Content</h1>
+
 <label>
   Title
   <input [(ngModel)]="newContent.title">
-</label>
+</label><br>
 <label>
   Body
   <input [(ngModel)]="newContent.body">
-</label>
+</label><br>
 <label>
   Author
   <input [(ngModel)]="newContent.author">
-</label>
+</label><br>
 <label>
   Image Link
   <input [(ngModel)]="newContent.imageLink">
-</label>
+</label><br>
 <label>
   Type
   <input [(ngModel)]="newContent.type">
-</label>
+</label><br>
+<hr>
 <!-- <label>
   Hashtags
   <input [(ngModel)]="newContent.hashtags">
 </label> -->
-<button (click)="addContent()">Add Content</button>
+<!-- <button (click)="addContent()">Add Content</button> -->
+
+<button *ngIf="this.newContent.id === -1" (click)="addContent()">Add Content</button>
+<button *ngIf="this.newContent.id !== -1" (click)="updateContent()">Update Content</button>
