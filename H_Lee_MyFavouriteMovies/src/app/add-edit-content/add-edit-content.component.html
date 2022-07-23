@@ -4,6 +4,11 @@
 <h1 *ngIf="this.newContent.id !== -1">Update Content</h1>
 
 <label>
+  ID
+  <input [(ngModel)]="newContent.id">
+</label><br>
+
+<label>
   Title
   <input [(ngModel)]="newContent.title">
 </label><br>
