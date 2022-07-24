@@ -1,6 +1,6 @@
 {
   "name": "h-lee-my-favourite-movies",
-  "version": "0.7.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -22,7 +22,9 @@
     "@angular/forms": "~13.3.0",
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
+    "@angular/pwa": "^13.3.0",
     "@angular/router": "~13.3.0",
+    "@angular/service-worker": "~13.3.0",
     "angular-in-memory-web-api": "^0.13.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
