@@ -3,7 +3,7 @@
   "version": "0.7.0",
   "scripts": {
     "ng": "ng",
-    "start": "http-server -p 8080 -c-1 dist/learning-angular",
+    "start": "http-server -p 8080 -c-1 dist/H_Lee_MyFavouriteMovies",
 
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
