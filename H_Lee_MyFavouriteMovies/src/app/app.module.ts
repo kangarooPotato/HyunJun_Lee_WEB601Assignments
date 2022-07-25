@@ -21,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
-
+import { StepperComponent } from './stepper/stepper.component';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MatCardModule } from '@angular/material/card';
     PageNotFoundComponent,
     ContentSearchComponent,
     TopNavigationComponent,
-    AddEditContentComponent
+    AddEditContentComponent,
+    StepperComponent
   ],
   imports: [
     BrowserModule,
@@ -49,6 +51,8 @@ import { MatCardModule } from '@angular/material/card';
     MatButtonModule,
     MatInputModule,
     MatCardModule,
+    MatStepperModule,
+    
     
 
   ],

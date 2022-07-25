@@ -6,6 +6,7 @@ import { DetailedContentComponent } from './detailed-content/detailed-content.co
 import { ContentSearchComponent } from './content-search/content-search.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AddEditContentComponent } from './add-edit-content/add-edit-content.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
   {
     path: "add",
     component: AddEditContentComponent
+  },
+  {
+    path: "stepper",
+    component: StepperComponent  
   },
   {
     path: "updateContent/:id",
