@@ -4,7 +4,7 @@
 }
 
 img {
-    width: 300px;
+    width: 400px;
 }
 
 
@@ -14,18 +14,28 @@ img {
 :host {
   text-align: center;
   border: 5px solid lightgray;
-  border-radius: 35px;
+  border-radius: 15px;
   display: block;
   margin: 0 auto 16px;
-  max-width: 500px;
+
+
+  .example-card {
+    max-width: 400px
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
   
  &.is-odd {
     background-color: white;
     color: black;
+    max-width: 400px
   }
 
   &.is-even {
     background-color: gray;
+    max-width: 400px;
     color: white;
   }
   &.searchedMovie{

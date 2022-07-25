@@ -1,14 +1,44 @@
 <!-- <h1>Add Content</h1> -->
 
-<h1 *ngIf="this.newContent.id === -1">Add Content</h1>
-<h1 *ngIf="this.newContent.id !== -1">Update Content</h1>
+<h1 *ngIf="this.newContent.id === -1" class="mat-display-1" color="primary">Add Content</h1>
+<h1 *ngIf="this.newContent.id !== -1" class="mat-display-1">Update Content</h1>
 
-<label>
-  ID
-  <input [(ngModel)]="newContent.id">
-</label><br>
 
-<label>
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>ID (for updating)</mat-label>
+  <input matInput [(ngModel)]="newContent.id">
+</mat-form-field>
+
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Title</mat-label>
+  <input matInput placeholder="Magnus" [(ngModel)]="newContent.title">
+</mat-form-field>
+
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Body</mat-label>
+  <input matInput [(ngModel)]="newContent.body">
+</mat-form-field>
+
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Type</mat-label>
+  <input matInput [(ngModel)]="newContent.type">
+</mat-form-field>
+
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Image Link</mat-label>
+  <input matInput [(ngModel)]="newContent.imageLink">
+</mat-form-field>
+
+<mat-form-field color="primary" appearance="fill">
+  <mat-label>Tags</mat-label>
+  <input matInput [(ngModel)]="newContent.hashtags">
+</mat-form-field>
+
+<button mat-flat-button color="primary" (click)="+(newContent.id || 'falsy') ? updateContent(): addContent() ">
+  Add Content
+</button>
+
+<!-- <label>
   Title
   <input [(ngModel)]="newContent.title">
 </label><br>
@@ -28,12 +58,12 @@
   Type
   <input [(ngModel)]="newContent.type">
 </label><br>
-<hr>
+<hr> -->
 <!-- <label>
   Hashtags
   <input [(ngModel)]="newContent.hashtags">
 </label> -->
 <!-- <button (click)="addContent()">Add Content</button> -->
-
+<!-- 
 <button *ngIf="this.newContent.id === -1" (click)="addContent()">Add Content</button>
-<button *ngIf="this.newContent.id !== -1" (click)="updateContent()">Update Content</button>
+<button *ngIf="this.newContent.id !== -1" (click)="updateContent()">Update Content</button> -->

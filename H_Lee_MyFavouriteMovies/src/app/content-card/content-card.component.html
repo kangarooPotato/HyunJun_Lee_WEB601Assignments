@@ -1,23 +1,31 @@
-<!-- <div *ngIf="topmovieCard">
-    <header>{{ topmovieCard.title }}</header>
-    <img *ngIf="topmovieCard.imageLink" [src]="topmovieCard.imageLink">
-  
-    <p *ngIf="topmovieCard.body">
-      {{ topmovieCard.body }}
-    </p>
-    <div class="author">{{ topmovieCard.author }}</div>
-    <div class="type">{{ topmovieCard.type }}</div>
-    <div class="hashtags" *ngIf="topmovieCard.hashtags">
-      <span *ngFor="let hashtag of topmovieCard.hashtags">
-        # {{ hashtag }}
-      </span>
-    </div>
-  </div> -->
+  <mat-card *ngIf="movieCard" class="movieCard" class="example-card">
 
+      <mat-card-header>
+        
+        <mat-card-title [routerLink]="['/detail', movieCard.id]">{{ movieCard.title }}</mat-card-title>
+      
+      </mat-card-header>
+      
+      
+      <img mat-card-image *ngIf="movieCard.imageLink" [src]="movieCard.imageLink" (click)="clickEvent()">
 
+    <mat-card-content>
+        <h4>{{ movieCard.type }}</h4>  
+        <div *ngIf="movieCard.hashtags && movieCard.hashtags.length > 0">
+          <span *ngFor="let eachhashtag of movieCard.hashtags"> #{{ eachhashtag }}</span>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+
+  </mat-card>
+
+<!-- 
   <div *ngIf="movieCard" class="movieCard">
     <div>
-      <!-- <h1>{{ topmovieCard?.title }}</h1> -->
       <h1>
         <a [routerLink]="['/detail', movieCard.id]">{{ movieCard.title }}</a>
       </h1>
@@ -32,4 +40,4 @@
         </div>
 
     </div>
-  </div>
+  </div> -->
